@@ -95,6 +95,28 @@ public class Biblioteca{
 
         int disponivel = 0;
 
+        if(l1==null && l1==checkLivro){
+
+            disponivel = 2;
+        }
+        if(l2==null && l2==checkLivro){
+
+            disponivel = 2;
+        }
+        if(l3==null && l3==checkLivro){
+
+            disponivel = 2;
+        }
+        if(l4==null && l4==checkLivro){
+
+            disponivel = 2;
+        }
+        if(l5==null && l5==checkLivro){
+
+            disponivel = 2;
+        }
+
+
         if(l1!=null && l1==checkLivro){
 
             if(l1.getAvailable()){
@@ -141,13 +163,64 @@ public class Biblioteca{
                 disponivel = 0;
             }
         }
+        
 
-        if(disponivel == 1){
+        switch (disponivel){
 
-            return "O livro "+checkLivro.titulo+" está Disponível";
-        }else{
+        case 0:
 
             return "O livro "+checkLivro.titulo+" está Alugado";
+        case 1:
+
+            return "O livro "+checkLivro.titulo+" está Disponível";
+        case 2:
+
+            return "O livro não foi encontrado na biblioteca";
+        default:
+
+            return "erro";
         }
+    }
+
+    public void listarLivros(){
+
+        System.out.println("#/-------------------------------------/#");
+        if(l1 == null){
+
+            System.out.println("Titulo: "+"|Autor: "+"|Ano Publicação: ");
+        }else{
+
+            System.out.println("Titulo: " + l1.titulo + "|Autor: " + l1.autor + "|Ano Publicação: " + l1.anoPubli);
+        }
+        if(l2 == null){
+
+            System.out.println("Titulo: "+"|Autor: "+"|Ano Publicação: ");
+        }else{
+
+            System.out.println("Titulo: "+l2.titulo+"|Autor: "+l2.autor+"|Ano Publicação: "+l2.anoPubli);
+        }
+
+        if(l3 == null){
+
+            System.out.println("Titulo:" + " |Autor: "+"|Ano Publicação: ");
+        }else{
+
+            System.out.println("Titulo: " +l3.titulo+"|Autor: "+l3.autor+"|Ano Publicação: "+l3.anoPubli);
+        }
+        if(l4 == null){
+
+            System.out.println("Titulo: "+"|Autor:"+" |Ano Publicação: ");
+        }else{
+
+            System.out.println("Titulo: "+l4.titulo+"|Autor: "+l4.autor+"|Ano Publicação: "+l4.anoPubli);
+        }
+        if(l5 == null){
+
+            System.out.println("Titulo: "+"|Autor: "+"|Ano Publicação: ");
+        }else{
+
+            System.out.println("Titulo: "+l5.titulo+"|Autor: "+l5.autor+"|Ano Publicação: "+l5.anoPubli);
+        }
+        System.out.println("#/-------------------------------------/#");
     }
 }
